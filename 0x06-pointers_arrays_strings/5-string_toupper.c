@@ -1,32 +1,19 @@
-#include "main.h"
-
+#include"main.h"
 /**
- * string_toupper - capitalize all letters in string
- * @s: string to manipulate
- * Return: string with all letters capitalized
+ * string_toupper - fonction toupper
+ * @a: pointer
+ * Return: pointer in return
  */
-
-char *string_toupper(char *s)
+char *string_toupper(char *a)
 {
+	int i;
 
-	int i = 0;
-
-	for (i = 0; s[i] != '\0'; i++)
+	for (i = 0; a[i] != 0; i++)
 	{
-		if (s[i] >= 'a' && s[i] <= 'z')
-			s[i] = s[i] - 'a' + 'A';
+		if (a[i] > 90 && a[i] != 10)
+	{
+		a[i] = a[i] - 32;
 	}
-	return (s);
+	}
+	return (a);
 }
-
-/* another method with pointer notation
-
-char *string_toupper(char *s)
-{
-        while (*s) //if s exists will omit null terminator
-	    if (*s >= 'a' && *s <= 'z')
-	        *s = *s -'a' + 'A';
-	    s++;
-
-}
-*/
