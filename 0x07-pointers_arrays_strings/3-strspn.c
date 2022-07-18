@@ -1,30 +1,31 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
- * *_strspn - return the number of occurent of a string
- * @s: string to check
- * @accept: character to match
- * Return: int
+ * _strspn - gets the length of a prefix substring.
+ * @s: character to print
+ * @accept: character
+ * Return: i.
  */
-
-
 unsigned int _strspn(char *s, char *accept)
 {
-	int i, j, cmpt = 0;
+int count;
 
-	for (i = 0; s[i] >= '\0'; i++)
+while (*s != '\0')
+{
+	while (*accept != '\0')
 	{
-		for (j = 0; accept[j] > '\0'; j++)
-		{
-			if (s[i] == accept[j])
-			{
-				cmpt++;
-				break;
-			}
-		}
-		if (accept[j] == '\0')
-		{
+		if (*s == *accept)
 			break;
-		}
+			count++;
+			accept++;
+
+			s++;
+
 	}
-	return (cmpt);
+if (*accept == '\0')
+	break;
+
+}
+		return (count + 1);
+}
