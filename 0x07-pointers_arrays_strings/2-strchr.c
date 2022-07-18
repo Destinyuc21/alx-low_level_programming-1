@@ -1,31 +1,23 @@
 #include "main.h"
 
 /**
- * _strchr - Locates a character in a string
- * @s: String
- * @c: Character to search
- * Return: Pointer to the first occurrence of the character c in the string s
- **/
+ * *_strchr - fills memory with a constant byte.
+ * @s: pointer to put the constant
+ * @c: constant
+ * Return: s
+ */
 
 char *_strchr(char *s, char c)
 {
+	int i;
 
-	while (*s != '\0') /*Declaring WHILE*/
+	for (i = 0; s[i] >= '\0'  ; i++)
 	{
-		if (*s == c) /*if s ==  c*/
+		if (s[i] == c)
 		{
-			return (s); /*return s*/
+			return (s + i);
 		}
-
-		++s;
 	}
 
-	if (*s == c)
-	{
-		return (s);
-
-	}
-
-
-	return (0);/* values null*/
+	return ('\0');
 }
